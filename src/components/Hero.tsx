@@ -327,11 +327,8 @@ export default function Hero() {
               Contact Me
             </button>
             <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                alert("Simulating CV download: Kushal_M_CV.pdf loaded successfully!");
-              }}
+              href="/KushalResume.pdf"
+              download="Kushal_Resume.pdf"
               className="inline-flex items-center gap-2 font-tech font-bold text-sm tracking-wider uppercase px-6 py-3.5 bg-neutral-900/60 backdrop-blur border border-neutral-800 text-neutral-300 rounded hover:text-white hover:border-neon-red/50 hover:bg-neutral-900 transition-all duration-300 cursor-none select-none"
             >
               <FileText className="w-4 h-4 text-neon-red" />
