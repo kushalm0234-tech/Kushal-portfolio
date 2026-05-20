@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #050505;
+  --color-bg-secondary: #0a0a0a;
+  --color-bg-card: rgba(10, 10, 10, 0.6);
+  --color-neon-red: #FF1E1E;
+  --color-neon-dark-red: #8B0000;
+  --color-cyber-red: #FF3333;
+  --color-text-primary: #F3F4F6;
+  --color-text-secondary: #9CA3AF;
+  
+  --font-cyber: 'Orbitron', system-ui, -apple-system, sans-serif;
+  --font-tech: 'Rajdhani', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom Utilities and Animations in CSS */
+@layer utilities {
+  .glow-text-red {
+    text-shadow: 0 0 8px rgba(255, 30, 30, 0.6), 0 0 20px rgba(255, 30, 30, 0.2);
+  }
+  .glow-text-red-strong {
+    text-shadow: 0 0 10px rgba(255, 30, 30, 0.8), 0 0 25px rgba(255, 30, 30, 0.4), 0 0 50px rgba(255, 30, 30, 0.2);
+  }
+  .glow-border-red {
+    box-shadow: 0 0 15px -3px rgba(255, 30, 30, 0.3), inset 0 0 15px -3px rgba(255, 30, 30, 0.1);
+  }
+  .glow-border-red-strong {
+    box-shadow: 0 0 25px rgba(255, 30, 30, 0.5), inset 0 0 15px rgba(255, 30, 30, 0.2);
+  }
+  .glassmorphism {
+    backdrop-filter: blur(12px);
+    background-color: rgba(10, 10, 10, 0.45);
+    border: 1px solid rgba(255, 30, 30, 0.15);
+  }
+  .glassmorphism-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .glassmorphism-hover:hover {
+    border-color: rgba(255, 30, 30, 0.45);
+    box-shadow: 0 0 20px -3px rgba(255, 30, 30, 0.25);
+    transform: translateY(-2px);
+  }
+}
+
+/* Base Styles Override for Dark Cyber Theme Only */
+html, body {
+  background-color: #050505 !important;
+  color: #F3F4F6 !important;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF1E1E;
+  box-shadow: 0 0 10px #FF1E1E;
+}
+
+/* Reset vite's built-in center layouts for index.css */
+#root {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  border: none;
+  min-height: auto;
+  display: block;
+}
+
+/* Interactive Background Grid Layer */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(255, 30, 30, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 30, 30, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+}
+
+.cyber-radial-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 30, 30, 0.08) 0%, transparent 65%);
+}
+
+/* Scanline visual overlay effect */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.12) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Keyframes for glitch-like text triggers */
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.05em -0.025em 0 rgba(0,255,0,.75), -0.025em 0.05em 0 rgba(0,0,255,.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.05em -0.025em 0 rgba(0,255,0,.75), -0.025em 0.05em 0 rgba(0,0,255,.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255,0,0,.75), 0.025em 0.025em 0 rgba(0,255,0,.75), -0.05em -0.05em 0 rgba(0,0,255,.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255,0,0,.75), 0.025em 0.025em 0 rgba(0,255,0,.75), -0.05em -0.05em 0 rgba(0,0,255,.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255,0,0,.75), 0.05em 0 0 rgba(0,255,0,.75), 0 -0.05em 0 rgba(0,0,255,.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255,0,0,.75), 0.05em 0 0 rgba(0,255,0,.75), 0 -0.05em 0 rgba(0,0,255,.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255,0,0,.75), -0.025em -0.025em 0 rgba(0,255,0,.75), -0.025em -0.05em 0 rgba(0,0,255,.75);
+  }
+}
+
+.glitch-hover:hover {
+  animation: glitch 1s linear infinite;
+}
+
+/* Hide original cursor when custom cursor active */
+@media (min-width: 1024px) {
+  body.custom-cursor-active {
+    cursor: none;
+  }
+  body.custom-cursor-active a, 
+  body.custom-cursor-active button, 
+  body.custom-cursor-active input, 
+  body.custom-cursor-active select,
+  body.custom-cursor-active textarea,
+  body.custom-cursor-active [role="button"] {
+    cursor: none;
+  }
+}
