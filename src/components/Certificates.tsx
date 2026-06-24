@@ -63,6 +63,22 @@ export default function Certificates() {
         "Completed a comprehensive hands-on Data Analytics internship at Internship Studio from 20th February, 2026 to 26th May, 2026. Gained experience in data preparation, EDA, visualization, and building diagnostic reports for business insights.",
       pdfUrl: "/Kushal_M_Data_Analytics_Internship_Certificate.pdf"
     }
+      {
+        id: "deloitte-data-analytics",
+        title: "Data Analytics Course",
+        issuer: "Deloitte",
+        date: "June 2026",
+        credentialId: "DLT-DA-2026",
+        skillsAcquired: [
+          "Data Analysis",
+          "Data Visualization",
+          "Excel & SQL",
+          "Business Intelligence"
+        ],
+        description:
+          "Completed Deloitte's Data Analytics course covering practical analytics workflows, visualization techniques, and business reporting.",
+        pdfUrl: "/Deloitte_Data_Analytics_Certificate.pdf"
+      }
   ];
 
   return (
