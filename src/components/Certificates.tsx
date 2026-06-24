@@ -63,7 +63,7 @@ export default function Certificates() {
         "Completed a comprehensive hands-on Data Analytics internship at Internship Studio from 20th February, 2026 to 26th May, 2026. Gained experience in data preparation, EDA, visualization, and building diagnostic reports for business insights.",
       pdfUrl: "/Kushal_M_Data_Analytics_Internship_Certificate.pdf"
     }
-      {
+    , {
         id: "deloitte-data-analytics",
         title: "Data Analytics Course",
         issuer: "Deloitte",
