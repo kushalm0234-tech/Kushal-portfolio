@@ -10,6 +10,7 @@ interface Certificate {
   credentialId: string;
   skillsAcquired: string[];
   description: string;
+  pdfUrl?: string;
 }
 
 export default function Certificates() {
@@ -45,6 +46,22 @@ export default function Certificates() {
       ],
       description:
         "Certifies advanced capabilities in identifying structural system bottlenecks, implementing data-driven operational process controls, and utilizing structured problem-solving methodologies to optimize end-to-end customer engagements."
+    },
+    {
+      id: "data-analytics-internship",
+      title: "Data Analytics Internship",
+      issuer: "Internship Studio",
+      date: "May 2026",
+      credentialId: "ISDTAI3003186",
+      skillsAcquired: [
+        "Data Analytics",
+        "Data Visualization",
+        "Python & SQL",
+        "Exploratory Data Analysis (EDA)"
+      ],
+      description:
+        "Completed a comprehensive hands-on Data Analytics internship at Internship Studio from 20th February, 2026 to 26th May, 2026. Gained experience in data preparation, EDA, visualization, and building diagnostic reports for business insights.",
+      pdfUrl: "/Kushal_M_Data_Analytics_Internship_Certificate.pdf"
     }
   ];
 
@@ -106,6 +123,18 @@ export default function Certificates() {
                 <span>Credential Spec: {cert.credentialId}</span>
                 <span className="underline">View Decrypted Badge</span>
               </div>
+              {cert.pdfUrl && (
+                <div className="mt-3 flex justify-end">
+                  <a
+                    href={cert.pdfUrl}
+                    download
+                    className="inline-flex items-center gap-2 font-tech font-bold text-sm tracking-wider uppercase px-4 py-2 bg-neon-red text-black border border-neon-red rounded hover:bg-transparent hover:text-white transition-all duration-300"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Download Certificate
+                  </a>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
@@ -216,6 +245,18 @@ export default function Certificates() {
                     </span>
                   ))}
                 </div>
+                {selectedCert.pdfUrl && (
+                  <div className="mt-6 pt-4 border-t border-neutral-900 flex justify-end">
+                    <a
+                      href={selectedCert.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 font-tech font-bold text-sm tracking-wider uppercase px-5 py-2.5 bg-neon-red text-black border border-neon-red rounded hover:bg-transparent hover:text-white transition-all duration-300 cursor-none"
+                    >
+                      View Decrypted Badge
+                    </a>
+                  </div>
+                )}
               </div>
             </motion.div>
           </motion.div>
